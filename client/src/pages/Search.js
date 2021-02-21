@@ -10,8 +10,14 @@ class Search extends React.Component {
     };
 
     componentDidMount() {
-        this.searchBook();
+        this.searchBookInitial();
     }
+
+    searchBookInitial = () => {
+        API.getBook("Lord of the Rings")
+            .then(res => this.setState({ books: res.data.items.map(bookData => this.makeBook(bookData)) }))
+            .catch(err => console.error(err));
+    };
 
     makeBook = bookData => {
             var authorsAPI = bookData.volumeInfo.authors
