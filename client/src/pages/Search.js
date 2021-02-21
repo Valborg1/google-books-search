@@ -14,12 +14,31 @@ class Search extends React.Component {
     }
 
     makeBook = bookData => {
+            var authorsAPI = bookData.volumeInfo.authors
+            if (!authorsAPI) {
+                authorsAPI = "Not Listed";
+            } else {
+                authorsAPI = bookData.volumeInfo.authors[0]
+            }
+
+            var descriptionAPI = bookData.volumeInfo.description;
+            if (!descriptionAPI) {
+                descriptionAPI = "No description."
+            }
+
+            var imgAPI = bookData.volumeInfo.imageLinks;
+            if (!imgAPI) {
+                imgAPI = ""
+            } else {
+                imgAPI = bookData.volumeInfo.imageLinks.thumbnail
+            }
+
         return {
             _id: bookData.id,
             title: bookData.volumeInfo.title,
-            authors: bookData.volumeInfo.authors,
-            description: bookData.volumeInfo.description,
-            image: bookData.volumeInfo.imageLinks.thumbnail,
+            authors: authorsAPI,
+            description: descriptionAPI,
+            image: imgAPI,
             link: bookData.volumeInfo.previewLink
         }
     }
