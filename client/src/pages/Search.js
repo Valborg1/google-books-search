@@ -34,7 +34,7 @@ class Search extends React.Component {
 
             var imgAPI = bookData.volumeInfo.imageLinks;
             if (!imgAPI) {
-                imgAPI = ""
+                imgAPI = "https://firstfreerockford.org/wp-content/uploads/2018/08/placeholder-book-cover-default.png"
             } else {
                 imgAPI = bookData.volumeInfo.imageLinks.thumbnail
             }
