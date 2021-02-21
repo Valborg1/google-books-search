@@ -1,0 +1,10 @@
+.bookResult {
+    background-color: #95a5a6;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+p {
+    color: white;
+    font-weight: bold;
+}

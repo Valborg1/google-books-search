@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import "./books.css"
+import SearchResults from "../components/SearchResults";
 
 function Books() {
   // Setting our component's initial state
@@ -59,22 +61,36 @@ function Books() {
         <Row center>
           <Col size="md-8">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>Create Your Reading List</h1>
             </Jumbotron>
-            <form>
-              <Input
-                onChange={handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <FormBtn
-                // disabled={!(formObject.author && formObject.title)}
-                onClick={handleFormSubmit}
-              >
-                Find Books
-              </FormBtn>
-            </form>
           </Col>
+
+        </Row>
+        <Row center>
+          <Col size="md-5">
+              <form>
+                <Input
+                  onChange={handleInputChange}
+                  name="title"
+                  placeholder="Title (required)"
+                />
+                <FormBtn
+                  // disabled={!(formObject.author && formObject.title)}
+                  onClick={handleFormSubmit}
+                >
+                  Find Books
+                </FormBtn>
+              </form>
+          </Col>
+          <SearchResults/>
+
+
+
+
+
+
+
+
           {/* <Col size="md-6 sm-12">
             <Jumbotron>
               <h1>Books On My List</h1>

@@ -1,0 +1,9 @@
+.jumbotron {
+    background-image : url("https://cdn.wallpapersafari.com/3/57/r2K0SO.jpg");
+    color: white;
+    border-radius: 10px;
+}
+
+.jumbotron h1 {
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
